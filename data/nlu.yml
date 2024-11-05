@@ -1,0 +1,23 @@
+version: "3.1"
+
+nlu:
+  - intent: book_field
+    examples: |
+      - Tôi muốn đặt sân bóng đá
+      - Làm sao để đặt sân cầu lông?
+      - Có thể đặt sân tennis không?
+      - Tôi muốn đặt sân vào thứ bảy
+      - Đặt sân cho [thứ hai](date) lúc [5 giờ chiều](time)
+      - Tôi muốn đặt sân [bóng rổ](field_type)
+
+  - intent: greet
+    examples: |
+      - Xin chào
+      - Chào bạn
+      - Hello
+
+  - intent: goodbye
+    examples: |
+      - Tạm biệt
+      - Chào tạm biệt
+      - Bye

@@ -1,0 +1,21 @@
+version: "3.1"
+
+stories:
+  - story: book field
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: book_field
+      - action: utter_ask_field_type
+      - intent: book_field
+        entities:
+          - field_type: "bóng đá"
+      - action: utter_ask_date
+      - intent: book_field
+        entities:
+          - date: "thứ bảy"
+      - action: utter_ask_time
+      - intent: book_field
+        entities:
+          - time: "5 giờ chiều"
+      - action: utter_confirm_booking

@@ -1,0 +1,56 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - book_field
+
+entities:
+  - date
+  - time
+  - field_type
+
+slots:
+  date:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: date
+
+  time:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: time
+
+  field_type:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: field_type
+
+responses:
+  utter_greet:
+    - text: "Chào bạn! Tôi có thể giúp gì cho bạn hôm nay?"
+
+  utter_goodbye:
+    - text: "Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi. Hẹn gặp lại!"
+
+  utter_ask_field_type:
+    - text: "Bạn muốn đặt sân loại nào (bóng đá, cầu lông, tennis, v.v.)?"
+
+  utter_ask_date:
+    - text: "Bạn muốn đặt sân vào ngày nào?"
+
+  utter_ask_time:
+    - text: "Bạn muốn đặt sân vào thời gian nào?"
+
+  utter_confirm_booking:
+    - text: "Tôi đã đặt sân {field_type} cho bạn vào {date} lúc {time}. Cảm ơn bạn!"
+
+  utter_iamabot:
+    - text: "Tôi là một chatbot được tạo để hỗ trợ bạn đặt sân thể thao."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
